@@ -1,0 +1,66 @@
+h1 {
+  font-size: 80px;
+  color: #14274b;
+}
+h2 {
+  font-size: 30px;
+  color: #14274b;
+}
+h3 {
+  font-size: 80px;
+  color: #14274b;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 200;
+  color: #14274b;
+}
+
+p {
+  font-size: 20px;
+  color: #14274b;
+}
+
+span {
+  size: 80px;
+  color: #14274b;
+}
+.col {
+  font-size: 30px;
+  text-align: center;
+  color: #14274b;
+}
+
+.card {
+  margin-top: 80px;
+  padding: 40px;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+}
+
+.today-emoji {
+  font-size: 220px;
+  text-align: center;
+}
+
+.form-control {
+  border-radius: 30px;
+}
+
+.btn {
+  border-radius: 30px;
+  border-color: #b5d8df;
+  background-color: white;
+  color: #14274b;
+}
+
+.card {
+  border-radius: 3.375rem;
+}
+
+.celsius,
+.fahrenheit {
+  font-size: 25px;
+}
