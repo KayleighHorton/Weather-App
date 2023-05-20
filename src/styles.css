@@ -21,6 +21,13 @@ p {
   color: #14274b;
 }
 
+ul {
+  list-style: none;
+  font-size: 20px;
+  color: #14274b;
+  padding: 0;
+}
+
 span {
   size: 80px;
   color: #14274b;
