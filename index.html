@@ -16,117 +16,118 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <form class="search-bar" id="city-search">
-            <div class="row">
-              <div class="col-6">
-                <input
-                  type="search"
-                  placeholder="City"
-                  class="form-control"
-                  id="city-input"
-                />
-              </div>
-              <div class="col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="form-control btn btn-success"
-                />
+      <div class="wrapper">
+        <div class="card">
+          <div class="card-body">
+            <form class="search-bar" id="city-search">
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="search"
+                    placeholder="City"
+                    class="form-control"
+                    id="city-input"
+                  />
                 </div>
-                    <div class="col-3">
-                        <button
+                <div class="col-3">
+                  <input
+                    type="submit"
+                    value="Search"
+                    class="form-control btn btn-success"
+                  />
+                </div>
+                <div class="col-3">
+                  <button
                     class="form-control btn btn-success"
                     id="current-location-button"
-                    >
+                  >
                     Current Location
                   </button>
                 </div>
               </div>
-            </div>
-          </form>
+            </form>
 
-          <div class="row">
-            <div class="col-6 today-emoji">
-              <img
-                src="images/partly-cloudy.png"
-                alt="Partly Cloudy"
-                width="300px"
-              />
+            <div class="row">
+              <div class="col-6 today-emoji">
+                <img
+                  src="images/partly-cloudy.png"
+                  alt="Partly Cloudy"
+                  width="300px"
+                />
+              </div>
+
+              <div class="col-6 float-end">
+                <h1 id="current-city">Boston</h1>
+                <h2>Tuesday</h2>
+                <h3 id="current-temp">15°C</h3>
+                <h4>56°H | 64°L</h4>
+                <p>Partly Cloudy</p>
+              </div>
             </div>
 
-            <div class="col-6 float-end">
-              <h1 id="current-city">Boston</h1>
-              <h2>Tuesday</h2>
-              <h3 id="current-temp">15°C</h3>
-              <h4>56°H | 64°L</h4>
-              <p>Partly Cloudy</p>
+            <div class="row">
+              <div class="col">Wedesday</div>
+              <div class="col">Thursday</div>
+              <div class="col">Friday</div>
+              <div class="col">Saturday</div>
+              <div class="col">Sunday</div>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="col">Wedesday</div>
-            <div class="col">Thursday</div>
-            <div class="col">Friday</div>
-            <div class="col">Saturday</div>
-            <div class="col">Sunday</div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <img
-                src="images/partly-cloudy.png"
-                alt="Partly Cloudy"
-                width="100px"
-              />
+            <div class="row">
+              <div class="col">
+                <img
+                  src="images/partly-cloudy.png"
+                  alt="Partly Cloudy"
+                  width="100px"
+                />
+              </div>
+              <div class="col">
+                <img src="images/sunny.png" alt="Sunny" width="100px" />
+              </div>
+              <div class="col">
+                <img src="images/sunny.png" alt="Sunny" width="100px" />
+              </div>
+              <div class="col">
+                <img
+                  src="images/partly-cloudy.png"
+                  alt="Partly Cloudy"
+                  width="100px"
+                />
+              </div>
+              <div class="col">
+                <img src="images/rainy.png" alt="Rainy" width="100px" />
+              </div>
             </div>
-            <div class="col">
-              <img src="images/sunny.png" alt="Sunny" width="100px" />
-            </div>
-            <div class="col">
-              <img src="images/sunny.png" alt="Sunny" width="100px" />
-            </div>
-            <div class="col">
-              <img
-                src="images/partly-cloudy.png"
-                alt="Partly Cloudy"
-                width="100px"
-              />
-            </div>
-            <div class="col">
-              <img src="images/rainy.png" alt="Rainy" width="100px" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <h4>73°H | 52°L</h4>
-              <p>Partly Cloudy</p>
-            </div>
-            <div class="col">
-              <h4>81°H | 54°L</h4>
-              <p>Sunny</p>
-            </div>
-            <div class="col">
-              <h4>82°H | 58°L</h4>
-              <p>Sunny</p>
-            </div>
-            <div class="col">
-              <h4>82°H | 58°L</h4>
-              <p>Partly Cloudy</p>
-            </div>
-            <div class="col">
-              <h4>72°H | 51°L</h4>
-              <p>Rainy</p>
+            <div class="row">
+              <div class="col">
+                <h4>73°H | 52°L</h4>
+                <p>Partly Cloudy</p>
+              </div>
+              <div class="col">
+                <h4>81°H | 54°L</h4>
+                <p>Sunny</p>
+              </div>
+              <div class="col">
+                <h4>82°H | 58°L</h4>
+                <p>Sunny</p>
+              </div>
+              <div class="col">
+                <h4>82°H | 58°L</h4>
+                <p>Partly Cloudy</p>
+              </div>
+              <div class="col">
+                <h4>72°H | 51°L</h4>
+                <p>Rainy</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer">
-      <a href="https://github.com/KayleighHorton/Weather-App"
-        >Open Source Code</a
-      >
-      <p>written by Kayleigh Horton</p>
+      <div class="footer">
+        <a href="https://github.com/KayleighHorton/Weather-App"
+          >Open Source Code</a
+        >
+        <p>written by Kayleigh Horton</p>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
