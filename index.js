@@ -29,7 +29,12 @@ h2.innerHTML = `${day} ${hour}:${minutes}`;
 function displayWeather(response) {
   let cityInputTemp = Math.round(response.data.main.temp);
   let h1 = document.querySelector("#current-temp");
+  let windSpeed = document.querySelector("#wind-speed");
+  let weatherDescription = document.querySelector("#weather-description");
+
   h1.innerHTML = `${cityInputTemp}°C`;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  weatherDescription.innerHTML = response.data.weather[0].description;
 }
 function search(event) {
   event.preventDefault();
