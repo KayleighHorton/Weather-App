@@ -58,7 +58,6 @@ function showPosition(position) {
 
   function showTemperature(response) {
     let temperature = document.querySelector("#current-temp");
-
     let city = response.data.name;
     let h1 = document.querySelector("h1");
     let windSpeed = document.querySelector("#wind-speed");
