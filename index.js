@@ -27,12 +27,11 @@ h2.innerHTML = `${day} ${hour}:${minutes}`;
 
 //search bar input
 function displayWeather(response) {
-  let cityInputTemp = Math.round(response.data.main.temp);
-  let h1 = document.querySelector("#current-temp");
+  let cityInputTemp = document.querySelector("#current-temp");
   let windSpeed = document.querySelector("#wind-speed");
   let weatherDescription = document.querySelector("#weather-description");
 
-  h1.innerHTML = `${cityInputTemp}°C`;
+  cityInputTemp.innerHTML = Math.round(response.data.main.temp);
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   weatherDescription.innerHTML = response.data.weather[0].description;
 }
@@ -52,20 +51,20 @@ function search(event) {
 let citySearch = document.querySelector("#city-search");
 citySearch.addEventListener("submit", search);
 
-//current location button is working!!!!!!!!!!!!!!
+//current location button is working!!!!!!!
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
 
   function showTemperature(response) {
-    let temperature = Math.round(response.data.main.temp);
-    let h3 = document.querySelector("h3");
+    let temperature = document.querySelector("#current-temp");
+
     let city = response.data.name;
     let h1 = document.querySelector("h1");
     let windSpeed = document.querySelector("#wind-speed");
     let weatherDescription = document.querySelector("#weather-description");
 
-    h3.innerHTML = `${temperature}`;
+    temperature.innerHTML = Math.round(response.data.main.temp);
     h1.innerHTML = `${city}`;
     windSpeed.innerHTML = Math.round(response.data.wind.speed);
     weatherDescription.innerHTML = response.data.weather[0].description;
