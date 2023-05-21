@@ -28,6 +28,10 @@ ul {
   padding: 0;
 }
 
+li {
+  text-transform: capitalize;
+}
+
 span {
   size: 80px;
   color: #14274b;

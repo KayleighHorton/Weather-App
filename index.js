@@ -59,12 +59,16 @@ function showPosition(position) {
 
   function showTemperature(response) {
     let temperature = Math.round(response.data.main.temp);
-
     let h3 = document.querySelector("h3");
-    h3.innerHTML = ` ${temperature} °C`;
     let city = response.data.name;
     let h1 = document.querySelector("h1");
+    let windSpeed = document.querySelector("#wind-speed");
+    let weatherDescription = document.querySelector("#weather-description");
+
+    h3.innerHTML = `${temperature}`;
     h1.innerHTML = `${city}`;
+    windSpeed.innerHTML = Math.round(response.data.wind.speed);
+    weatherDescription.innerHTML = response.data.weather[0].description;
   }
   let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
