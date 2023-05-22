@@ -27,15 +27,21 @@ h2.innerHTML = `${day} ${hour}:${minutes}`;
 
 //search bar input
 function displayWeather(response) {
+  console.log(response.data);
   let cityInputTemp = document.querySelector("#current-temp");
   let windSpeed = document.querySelector("#wind-speed");
   let weatherDescription = document.querySelector("#weather-description");
+  let inconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
   cityInputTemp.innerHTML = Math.round(response.data.main.temp);
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   weatherDescription.innerHTML = response.data.weather[0].description;
+  inconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function search(event) {
   event.preventDefault();
