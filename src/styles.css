@@ -33,6 +33,10 @@ span {
   size: 80px;
   color: #14274b;
 }
+
+a {
+  text-decoration: none;
+}
 .temp-display {
   font-size: 80px;
   color: #14274b;
