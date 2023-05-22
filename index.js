@@ -88,6 +88,12 @@ function displayFahrenheitTemp(event) {
   temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temp");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
 
 let currentLocationButton = document.querySelector("#current-location-button");
@@ -95,3 +101,6 @@ currentLocationButton.addEventListener("click", navigatorPosition);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
