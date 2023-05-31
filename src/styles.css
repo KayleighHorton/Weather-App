@@ -79,3 +79,15 @@ a {
 .card {
   border-radius: 3.375rem;
 }
+
+.forecast-next-day {
+  font-weight: 500;
+}
+
+.forecast-high-temperature {
+  font-weight: 500;
+}
+
+.forecast-low-temperature {
+  font-weight: 300;
+}
