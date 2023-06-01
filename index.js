@@ -59,6 +59,32 @@ function search(event) {
 let citySearch = document.querySelector("#city-search");
 citySearch.addEventListener("submit", search);
 
+//adding in forecast
+function displayForecast() {
+  let forcastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `<div class="col-2">
+    <div class="forecast-next-day">
+      Forecast
+      <div>
+        <img
+          src="images/partly-cloudy.png"
+          alt="forecast icon"
+          width="100"
+        />
+      </div>
+      <span class="forecast-high-temperature">High</span>
+      <span class="forecast-low-temperature">Low</span>
+    </div>
+  </div>
+`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //current location button is working!!!!!!!
 function showPosition(position) {
   let latitude = position.coords.latitude;
