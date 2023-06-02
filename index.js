@@ -42,6 +42,13 @@ function displayWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
+}
+function getForecast(coordinates) {
+  let apiKey = "cf6b50b908fa2e0baca3eed8a569a5f6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 function search(event) {
   event.preventDefault();
@@ -77,6 +84,7 @@ function showPosition(position) {
     h1.innerHTML = `${city}`;
     windSpeed.innerHTML = Math.round(response.data.wind.speed);
     weatherDescription.innerHTML = response.data.weather[0].description;
+    displayForecast(response.data.coords);
   }
   let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
@@ -112,30 +120,29 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 //adding in forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forcastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-    <div class="forecast-next-day">
-      ${day}
-      <div>
+  ${formatDay(forecastDay.dt)}
         <img
-          src="images/partly-cloudy.png"
-          alt="forecast icon"
-          width="100"
+          src="https://openweathermap.org/img/wn/${
+            forcastDay.weather[0].icon
+          }@2x.png"
         />
-      </div>
-      <span class="forecast-high-temperature">High</span>
-      <span class="forecast-low-temperature">Low</span>
-    </div>
+     
+      <span class="forecast-high-temperature">${forecastDay.temp.max}</span>
+      <span class="forecast-low-temperature">${forecastDay.temp.min}</span>
+  
   </div>
 `;
   });
   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  forcastElement.innerHTML = forecastHTML;
 }
