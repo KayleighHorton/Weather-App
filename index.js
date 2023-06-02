@@ -114,13 +114,15 @@ celsiusLink.addEventListener("click", displayCelsiusTemp);
 //adding in forecast
 function displayForecast() {
   let forcastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="col-2">
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
     <div class="forecast-next-day">
-      Forecast
+      ${day}
       <div>
         <img
           src="images/partly-cloudy.png"
@@ -133,6 +135,7 @@ function displayForecast() {
     </div>
   </div>
 `;
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
