@@ -138,19 +138,20 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `<div class="col-2 weather-forecast">
-          ${formatDay(forecastDay.dt)}</div>
+          ${formatDay(forecastDay.dt)}
             <img
                 src="https://openweathermap.org/img/wn/${
                   forecastDay.weather[0].icon
                 }@2x.png"
+                width="30"
         />
-     
+     </div>
       <span class="forecast-high-temperature">${Math.round(
         forecastDay.temp.max
-      )}</span>
+      )}° </span>
       <span class="forecast-low-temperature">${Math.round(
         forecastDay.temp.min
-      )}</span>
+      )}° </span>
   
   </div>
 `;
