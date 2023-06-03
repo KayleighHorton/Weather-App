@@ -119,6 +119,13 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 //adding in forecast
 function displayForecast(response) {
   console.log(response.data.daily);
@@ -126,15 +133,17 @@ function displayForecast(response) {
   let forcastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-  ${formatDay(forecastDay.dt)}
-        <img
-          src="https://openweathermap.org/img/wn/${
-            forcastDay.weather[0].icon
-          }@2x.png"
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+          <div class="weather-forecast">
+          ${formatDay(forecastDay.dt)}</div>
+            <img
+                src="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
         />
      
       <span class="forecast-high-temperature">${forecastDay.temp.max}</span>
@@ -142,6 +151,7 @@ function displayForecast(response) {
   
   </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forcastElement.innerHTML = forecastHTML;
