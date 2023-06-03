@@ -137,8 +137,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
-          <div class="weather-forecast">
+        `<div class="col-2 weather-forecast">
           ${formatDay(forecastDay.dt)}</div>
             <img
                 src="https://openweathermap.org/img/wn/${
@@ -146,8 +145,12 @@ function displayForecast(response) {
                 }@2x.png"
         />
      
-      <span class="forecast-high-temperature">${forecastDay.temp.max}</span>
-      <span class="forecast-low-temperature">${forecastDay.temp.min}</span>
+      <span class="forecast-high-temperature">${Math.round(
+        forecastDay.temp.max
+      )}</span>
+      <span class="forecast-low-temperature">${Math.round(
+        forecastDay.temp.min
+      )}</span>
   
   </div>
 `;
