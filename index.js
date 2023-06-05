@@ -124,7 +124,7 @@ function displayForecast(response) {
                 }@2x.png"
                 width="30"
                />
-                </div>
+                <div>
                     <span class="forecast-high-temperature">${Math.round(
                       forecastDay.temp.max
                     )}° </span>
