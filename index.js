@@ -91,12 +91,14 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
 
   function showTemperature(response) {
+    console.log(response);
     let temperature = document.querySelector("#current-temp");
     let city = response.data.name;
     let h1 = document.querySelector("h1");
     let windSpeed = document.querySelector("#wind-speed");
     let weatherDescription = document.querySelector("#weather-description");
     let inconElement = document.querySelector("#icon");
+
     fahrenheitTemperature = response.data.main.temp;
 
     temperature.innerHTML = Math.round(response.data.main.temp);
@@ -105,7 +107,7 @@ function showPosition(position) {
     weatherDescription.innerHTML = response.data.weather[0].description;
     inconElement.setAttribute(
       "src",
-      imageCodePathConverter[response.data.weather[0].icon]
+      iconCodePathConverter[response.data.weather[0].icon]
     );
     displayForecast(response.data.coords);
   }

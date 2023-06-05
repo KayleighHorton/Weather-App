@@ -3,7 +3,7 @@ h1 {
   color: #14274b;
 }
 h2 {
-  font-size: 30px;
+  font-size: 20px;
   color: #14274b;
 }
 
@@ -27,6 +27,7 @@ ul {
 
 li {
   text-transform: capitalize;
+  color: #14274b;
 }
 
 span {
@@ -34,9 +35,6 @@ span {
   color: #14274b;
 }
 
-a {
-  text-decoration: none;
-}
 .temp-display {
   font-size: 80px;
   color: #14274b;
@@ -63,6 +61,7 @@ a {
 .today-emoji {
   font-size: 220px;
   text-align: center;
+  align-items: center;
 }
 
 .form-control {
@@ -76,6 +75,11 @@ a {
   color: #14274b;
 }
 
+.btn:hover {
+  background-color: #b5d8df;
+  border-color: #b5d8df;
+}
+
 .card {
   border-radius: 3.375rem;
 }
@@ -86,8 +90,16 @@ a {
 
 .forecast-high-temperature {
   font-weight: 500;
+  font-size: 16px;
 }
 
 .forecast-low-temperature {
   font-weight: 300;
+  font-size: 16px;
+}
+
+.weather-forecast {
+  font-size: 20px;
+  text-align: center;
+  margin: 20px;
 }
