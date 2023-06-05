@@ -23,6 +23,27 @@ let days = [
 ];
 let day = days[now.getDay()];
 
+let iconCodePathConverter = {
+  "01d": "images/sunny.png",
+  "01n": "images/sunny.png",
+  "02d": "images/partly-cloudy.png",
+  "02n": "images/partly-cloudy.png",
+  "03d": "images/cloudy.png",
+  "03n": "images/cloudy.png",
+  "04d": "images/cloudy.png",
+  "04n": "images/cloudy.png",
+  "09d": "images/rainy.png",
+  "09n": "images/rainy.png",
+  "10d": "images/rainy.png",
+  "10n": "images/rainy.png",
+  "11d": "images/thunderstorm.png",
+  "11n": "images/thunderstorm.png",
+  "13d": "images/snow.png",
+  "13n": "images/snow.png",
+  "50d": "images/mist.png",
+  "50n": "images/mist.png",
+};
+
 h2.innerHTML = `${day} ${hour}:${minutes}`;
 
 //search bar input
@@ -34,13 +55,12 @@ function displayWeather(response) {
   let inconElement = document.querySelector("#icon");
 
   fahrenheitTemperature = response.data.main.temp;
-
   cityInputTemp.innerHTML = Math.round(response.data.main.temp);
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   weatherDescription.innerHTML = response.data.weather[0].description;
   inconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    iconCodePathConverter[response.data.weather[0].icon]
   );
   getForecast(response.data.coord);
 }
@@ -85,7 +105,7 @@ function showPosition(position) {
     weatherDescription.innerHTML = response.data.weather[0].description;
     inconElement.setAttribute(
       "src",
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      imageCodePathConverter[response.data.weather[0].icon]
     );
     displayForecast(response.data.coords);
   }
@@ -123,9 +143,7 @@ function displayForecast(response) {
           <div weather-forecast-date">
           ${formatDay(forecastDay.dt)}</div>
             <img
-                src="https://openweathermap.org/img/wn/${
-                  forecastDay.weather[0].icon
-                }@2x.png"
+                src="${iconCodePathConverter[forecastDay.weather[0].icon]}"
                 width="30"
                />
                 <div>
@@ -143,24 +161,3 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forcastElement.innerHTML = forecastHTML;
 }
-
-let iconCodePathConverter = {
-  "01d": "img/sunny.png",
-  "01n": "img/sunny.png",
-  "02d": "img/partly-cloudy.png",
-  "02n": "img/partly-cloudy.png",
-  "03d": "img/cloudy.png",
-  "03n": "img/cloudy.png",
-  "04d": "img/cloudy.png",
-  "04n": "img/cloudy.png",
-  "09d": "img/rainy.png",
-  "09n": "img/rainy.png",
-  "10d": "img/rainy.png",
-  "10n": "img/rainy.png",
-  "11d": "img/thunderstorm.png",
-  "11n": "img/thunderstorm.png",
-  "13d": "img/snow.png",
-  "13n": "img/snow.png",
-  "50d": "img/mist.png",
-  "50n": "img/mist.png",
-};
