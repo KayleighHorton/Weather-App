@@ -143,3 +143,24 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forcastElement.innerHTML = forecastHTML;
 }
+
+let iconCodePathConverter = {
+  "01d": "img/sunny.png",
+  "01n": "img/sunny.png",
+  "02d": "img/partly-cloudy.png",
+  "02n": "img/partly-cloudy.png",
+  "03d": "img/cloudy.png",
+  "03n": "img/cloudy.png",
+  "04d": "img/cloudy.png",
+  "04n": "img/cloudy.png",
+  "09d": "img/rainy.png",
+  "09n": "img/rainy.png",
+  "10d": "img/rainy.png",
+  "10n": "img/rainy.png",
+  "11d": "img/thunderstorm.png",
+  "11n": "img/thunderstorm.png",
+  "13d": "img/snow.png",
+  "13n": "img/snow.png",
+  "50d": "img/mist.png",
+  "50n": "img/mist.png",
+};
