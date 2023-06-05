@@ -76,13 +76,17 @@ function showPosition(position) {
     let h1 = document.querySelector("h1");
     let windSpeed = document.querySelector("#wind-speed");
     let weatherDescription = document.querySelector("#weather-description");
-
+    let inconElement = document.querySelector("#icon");
     fahrenheitTemperature = response.data.main.temp;
 
     temperature.innerHTML = Math.round(response.data.main.temp);
     h1.innerHTML = `${city}`;
     windSpeed.innerHTML = Math.round(response.data.wind.speed);
     weatherDescription.innerHTML = response.data.weather[0].description;
+    inconElement.setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
     displayForecast(response.data.coords);
   }
   let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
